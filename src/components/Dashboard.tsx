@@ -6,7 +6,7 @@ type Props = {};
 const Dashboard = ({}: Props) => {
   return (
     <div className="space-y-5 myauto">
-      <div className="text-white text-md text-left font-bold mb-5">
+      <div className="text-white text-md text-left font-bold mb-3">
         DetailsView
       </div>
       <div className="rounded-3xl p-5 bg-main-darker">
