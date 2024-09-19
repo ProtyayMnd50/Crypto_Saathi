@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, ButtonGroup } from "@nextui-org/button";
 import MarketChart from "./MarketChart";
+import PriceChange24h from "./PriceChange24h";
 const DetailsView = () => {
   return (
     <>
@@ -25,6 +26,7 @@ const DetailsView = () => {
           <div className="flex w-full justify-between">
             <div className="text-white">$1200</div>
             {/* PriceChange component*/}
+            <PriceChange24h changePrice={40} />
           </div>
         </div>
         <div className="bg-indigo-900 bg-opacity-10 w-full md-full md:w-52 p-3 space-y-4 rounded-2xl h-fit text-indigo-300">
