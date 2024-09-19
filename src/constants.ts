@@ -1,6 +1,6 @@
 export const COLORS = {
-  mainDarkest: "#101A38",
+  mainDarkest: "#1D1A3B",
   mainDarker: "#211D44",
   mainDark: "#24204B",
-  primary: "#737CD0",
+  primary: "#737CDD",
 };
