@@ -50,7 +50,7 @@ Props) => {
         </div>
         <Button
           onClick={() => {}}
-          variant="faded"
+          variant="bordered"
           className="mt-auto"
           startContent={<IoPulse />}
         >
