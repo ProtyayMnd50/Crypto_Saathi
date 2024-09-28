@@ -16,7 +16,7 @@ const DetailsView = () => {
       {/* charts */}
       <div className="mx-auto w-full min-h-96">
         {/* Marketchart  component*/}
-        <MarketChart></MarketChart>
+        <MarketChart series={[]}></MarketChart>
       </div>
 
       {/* details */}
