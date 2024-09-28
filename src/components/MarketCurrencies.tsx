@@ -1,54 +1,35 @@
-import { div } from "framer-motion/client";
 import React from "react";
-import { Button } from "@nextui-org/button";
-import PriceChange24h from "./PriceChange24h";
-import { IoPulse } from "react-icons/io5";
-type Props = {
-  id: string;
-  image: string;
-  name: string;
-  currentPrice: number;
-  changeIn24h: number;
-  chartData: { x: number; y: number };
-};
-const MarketCurrencies = ({
-  id,
-  name,
-  image,
-  currentPrice,
-  changeIn24h,
-  chartData,
-}: Props) => {
+import MarketCurrencyCard from "./MarketCurrencyCard";
+const MarketCurrencies = () => {
   return (
-    <div className="bg-indigo-900 bg-opacity-10 w-full p-5 rounded-2xl flex flex-col h-80 text-indigo-300">
-      {/* image and name */}
-      <div className="flex gap-3">
-        <div>
-          <img src={image} alt={name} className="rounded-full w-12" />
-        </div>
-        <div className="font-bold my-auto text-white text-xl">{name}</div>
-      </div>
-      {/* chart */}
-      <div className="ml-auto">{/* cardchart */}</div>
-      {/* price change */}
-      <div className="flex justify-between">
-        <div className="mt-auto h-fit">
-          <PriceChange24h changePrice={32} />
-          <div className="text-white text-xl lg:text-4xl">
-            $(currentPrice.toLocaleString())
-          </div>
-        </div>
-        <Button
-          onClick={() => {}}
-          variant="faded"
-          className="mt-auto"
-          startContent={<IoPulse />}
-        >
-          Details
-        </Button>
-      </div>
-    </div>
+    <MarketCurrencyCard
+      image={sample.image}
+      changeIn24h={sample.price_change_percentage_24h}
+      currentPrice={sample.current_price}
+      name={sample.name}
+      chartData={[]}
+      id={"bitcoin"}
+    />
   );
 };
 
 export default MarketCurrencies;
+
+const sample = {
+  id: "bitcoin",
+  symbo: "btc",
+  name: "Bitcoin",
+  image:
+    "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1696581400",
+  current_price: 44958,
+  market_cap: 875582800730,
+  market_cap_rank: 1,
+  filly_diluted_valuation: 93890119514,
+  total_volume: 41082415169,
+  high_24h: 47600,
+  loh_24h: 44591,
+  price_change_24h: -1579.9151999991518,
+  price_change_percentage_24h: -31441192896.38611,
+  market_cap_change_percentage_24h: -3.46641,
+  circulating_supply: 19594637.0,
+};
