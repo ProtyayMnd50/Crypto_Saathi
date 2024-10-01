@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button, ButtonGroup } from "@nextui-org/button";
 import MarketChart from "./MarketChart";
 import PriceChange24h from "./PriceChange24h";
+import Loading from "./Loading";
 import useMarketChart from "../queries/useMarketChart";
 import useCoinDetails from "../queries/useCoinDetails";
-
+import toast from "react-hot-toast";
 type Props = {};
 const daysFilters = [7, 30, 365];
 type DaysType = keyof typeof daysFilters;
@@ -14,16 +15,16 @@ const DetailsView = ({}: Props) => {
   const [days, setDays] = useState<DaysType>(365);
   const {
     data: chartData,
-    // isLoading:isChartDataLoading,
-    // isError:isChartDataError
+    isLoading: isChartDataLoading,
+    isError: isChartDataError,
   } = useMarketChart({
     id: coinId,
     days: days as number,
   });
   const {
     data: details,
-    // isLoading:isDetailsLoading,
-    // isError:isDetailsError
+    isLoading: isDetailsLoading,
+    isError: isDetailsError,
   } = useCoinDetails({
     id: coinId,
   });
@@ -31,6 +32,13 @@ const DetailsView = ({}: Props) => {
   const currentPrice = details?.market_data.current_price.usd;
   const high24h = details?.market_data.high_24h.usd;
   const low24h = details?.market_data.low_24h.usd;
+
+  useEffect(() => {
+    if (isDetailsError || isChartDataError)
+      toast("Sorry! Failed to load resources!");
+  }, [isDetailsError, isChartDataError]);
+
+  if (isDetailsLoading || isChartDataLoading) return <Loading />;
   return (
     <>
       {/* filters */}
