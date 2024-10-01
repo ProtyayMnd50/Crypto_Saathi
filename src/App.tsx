@@ -3,7 +3,7 @@ import Header from "./components/Header";
 function App() {
   return (
     <>
-      <div className="container px-md:px-5 mx-auto min-h-screen py-5">
+      <div className="container px-5 mx-auto min-h-screen py-5">
         {/* Header */}
         <Header></Header>
         {/* Dashboard */}

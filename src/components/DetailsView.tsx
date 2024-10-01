@@ -6,12 +6,14 @@ import Loading from "./Loading";
 import useMarketChart from "../queries/useMarketChart";
 import useCoinDetails from "../queries/useCoinDetails";
 import toast from "react-hot-toast";
+import { useGlobalStore } from "../store/useGlobalStore";
 type Props = {};
 const daysFilters = [7, 30, 365];
 type DaysType = keyof typeof daysFilters;
 
 const DetailsView = ({}: Props) => {
-  const coinId = "bitcoin";
+  // const coinId = "bitcoin";
+  const coinId = useGlobalStore((state) => state.detailsId);
   const [days, setDays] = useState<DaysType>(365);
   const {
     data: chartData,

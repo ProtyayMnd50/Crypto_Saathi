@@ -3,8 +3,10 @@ import { div } from "framer-motion/client";
 import { Button } from "@nextui-org/button";
 import PriceChange24h from "./PriceChange24h";
 import { IoPulse } from "react-icons/io5";
+import { useGlobalStore } from "../store/useGlobalStore";
 // components import
 import CardChart from "./CardChart";
+
 type Props = {
   id: string;
   image: string;
@@ -21,6 +23,13 @@ const MarketCurrencyCard = ({
   changeIn24h,
   chartData,
 }: Props) => {
+  const setDetailsId = useGlobalStore((state) => state.setDetailsId);
+
+  const showDetails = () => {
+    setDetailsId(id);
+    window.scrollTo({ behavior: "smooth", top: 0 });
+  };
+
   return (
     <div className="bg-indigo-900 bg-opacity-10 w-full p-5 rounded-2xl flex flex-col h-80 text-indigo-300">
       {/* image and name */}
@@ -43,7 +52,8 @@ const MarketCurrencyCard = ({
           </div>
         </div>
         <Button
-          onClick={() => {}}
+          // onClick={() => {}}
+          onClick={showDetails}
           variant="bordered"
           className="mt-auto"
           startContent={<IoPulse />}
