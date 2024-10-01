@@ -4,6 +4,7 @@ import ReactApexChart from "react-apexcharts";
 import { COLORS } from "../constants.ts";
 import { color } from "framer-motion";
 import moment from "moment";
+import { customChartTooltip } from "../utils/helpers";
 type Props = {
   series: number[][];
 };
@@ -30,6 +31,12 @@ const options: ApexOptions = {
       offsetX: -10,
       style: { colors: "#777" },
       formatter: (value) => "$" + value.toLocaleString(),
+    },
+  },
+  tooltip: {
+    custom: ({ seriesIndex, dataPointIndex, w }) => {
+      let data = w.globals.initialSeries[seriesIndex].data[dataPointIndex];
+      return customChartTooltip(data[1], 4);
     },
   },
   xaxis: {
