@@ -1,13 +1,18 @@
 import Axios from "axios";
-import { IFormattedMarketCoin, IMarketChart, IMarketCoin } from "../interfaces";
-import moment from "moment";
+import {
+  IFormattedMarketCoin,
+  IMarketChart,
+  IMarketCoin,
+  ICoinDetails,
+} from "../interfaces";
+import moment, { now } from "moment";
 
 const axios = Axios.create({
   baseURL: "https://api.coingecko.com/api/v3/coins",
 });
 //fetchMarketCurrencies
 export async function fetchMarketCurrencies(): Promise<IFormattedMarketCoin> {
-  const data = await axios.get("/markets", {
+  const { data } = await axios.get("/markets", {
     params: {
       vs_currency: "usd",
       order: "market_cap_desc",
@@ -18,7 +23,7 @@ export async function fetchMarketCurrencies(): Promise<IFormattedMarketCoin> {
       locale: "en",
     },
   });
-  return formatData[data];
+  return formatData(data);
 }
 //fetchMarketChart
 export async function fetchMarketChart(

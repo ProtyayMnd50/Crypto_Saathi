@@ -1,5 +1,5 @@
-import { div } from "framer-motion/client";
 import React from "react";
+import { div } from "framer-motion/client";
 import { Button } from "@nextui-org/button";
 import PriceChange24h from "./PriceChange24h";
 import { IoPulse } from "react-icons/io5";
@@ -11,16 +11,16 @@ type Props = {
   name: string;
   currentPrice: number;
   changeIn24h: number;
-  chartData: { x: number; y: number };
+  chartData: { x: number; y: number }[];
 };
 const MarketCurrencyCard = ({
-  // id,
+  id,
   name,
   image,
   currentPrice,
   changeIn24h,
-}: // chartData,
-Props) => {
+  chartData,
+}: Props) => {
   return (
     <div className="bg-indigo-900 bg-opacity-10 w-full p-5 rounded-2xl flex flex-col h-80 text-indigo-300">
       {/* image and name */}
@@ -32,13 +32,7 @@ Props) => {
       </div>
       {/* chart */}
       <div className="ml-auto">
-        <CardChart
-          series={[
-            { x: 1784861802, y: 1800 },
-            { x: 1784871802, y: 1100 },
-            { x: 178484861802, y: 900 },
-          ]}
-        />
+        <CardChart series={chartData} />
       </div>
       {/* price change */}
       <div className="flex justify-between">
