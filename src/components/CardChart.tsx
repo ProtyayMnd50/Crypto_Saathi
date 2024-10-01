@@ -38,7 +38,7 @@ const options: ApexOptions = {
       style: { colors: "#777" },
       hideOverlappingLabels: true,
       formatter: (value) => {
-        return moment(value).format("YYYY/MM/DD h:mm");
+        return moment.unix(+value).format("YYYY/MM/DD h:mm");
       },
     },
   },
