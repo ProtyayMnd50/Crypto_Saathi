@@ -49,12 +49,7 @@ const MarketChart = ({ series }: Props) => {
       options={options}
       series={[
         {
-          data: [
-            [170499002, 12800],
-            [1704007002, 15200],
-            [1704889783, 9009],
-            [1704887002, 11800],
-          ],
+          data: series,
         },
       ]}
     />
