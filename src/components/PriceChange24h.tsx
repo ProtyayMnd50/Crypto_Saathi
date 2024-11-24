@@ -1,4 +1,3 @@
-import React from "react";
 import { IoArrowDown, IoArrowUp } from "react-icons/io5";
 
 type Props = {

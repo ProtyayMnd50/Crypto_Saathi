@@ -79,8 +79,17 @@
 //   return formattedData;
 // }
 
-import Axios from "axios";
+//optimsed code :
+
 import moment from "moment";
+
+import Axios from "axios";
+import {
+  IFormattedMarketCoin,
+  IMarketChart,
+  IMarketCoin,
+  ICoinDetails,
+} from "../interfaces";
 
 const axios = Axios.create({
   baseURL: "https://api.coingecko.com/api/v3/coins",

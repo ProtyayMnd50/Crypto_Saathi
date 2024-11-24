@@ -1,5 +1,3 @@
-import React from "react";
-import { div } from "framer-motion/client";
 import { Button } from "@nextui-org/button";
 import PriceChange24h from "./PriceChange24h";
 import { IoPulse } from "react-icons/io5";

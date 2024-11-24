@@ -57,6 +57,9 @@ importers:
       '@eslint/js':
         specifier: ^9.9.0
         version: 9.11.1
+      '@types/moment':
+        specifier: ^2.13.0
+        version: 2.13.0
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.10
@@ -1598,6 +1601,10 @@ packages:
 
   '@types/lodash@4.17.9':
     resolution: {integrity: sha512-w9iWudx1XWOHW5lQRS9iKpK/XuRhnN+0T7HvdCCd802FYkT1AMTnxndJHGrNJwRoRHkslGr4S29tjm1cT7x/7w==}
+
+  '@types/moment@2.13.0':
+    resolution: {integrity: sha512-DyuyYGpV6r+4Z1bUznLi/Y7HpGn4iQ4IVcGn8zrr1P4KotKLdH0sbK1TFR6RGyX6B+G8u83wCzL+bpawKU/hdQ==}
+    deprecated: This is a stub types definition for Moment (https://github.com/moment/moment). Moment provides its own type definitions, so you don't need @types/moment installed!
 
   '@types/prop-types@15.7.13':
     resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
@@ -5126,6 +5133,10 @@ snapshots:
       '@types/lodash': 4.17.9
 
   '@types/lodash@4.17.9': {}
+
+  '@types/moment@2.13.0':
+    dependencies:
+      moment: 2.30.1
 
   '@types/prop-types@15.7.13': {}
 

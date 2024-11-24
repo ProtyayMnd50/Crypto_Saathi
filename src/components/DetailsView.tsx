@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from "React";
 // import { Button, ButtonGroup } from "@nextui-org/button";
 import MarketChart from "./MarketChart";
 import PriceChange24h from "./PriceChange24h";
@@ -60,10 +60,7 @@ const DetailsView = () => {
         </ButtonGroup> */}
         <ButtonGroup color="primary" variant="bordered">
           {daysFilters.map((filter) => (
-            <Button
-              key={filter}
-              onClick={() => setDays(filter)}
-            >
+            <Button key={filter} onClick={() => setDays(filter)}>
               {filter}d
             </Button>
           ))}

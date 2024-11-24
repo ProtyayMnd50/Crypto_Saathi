@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from "React";
 import useMarketCoins from "../queries/useMarketCoins";
 import Loading from "./Loading";
 import MarketCurrencyCard from "./MarketCurrencyCard";
