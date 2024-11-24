@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Button, ButtonGroup } from "@nextui-org/button";
+import { useState, useEffect } from "react";
+// import { Button, ButtonGroup } from "@nextui-org/button";
 import MarketChart from "./MarketChart";
 import PriceChange24h from "./PriceChange24h";
 import Loading from "./Loading";
@@ -7,14 +7,20 @@ import useMarketChart from "../queries/useMarketChart";
 import useCoinDetails from "../queries/useCoinDetails";
 import toast from "react-hot-toast";
 import { useGlobalStore } from "../store/useGlobalStore";
-type Props = {};
+import { Button, ButtonGroup } from "@nextui-org/button";
+
 const daysFilters = [7, 30, 365];
 type DaysType = keyof typeof daysFilters;
 
-const DetailsView = ({}: Props) => {
-  // const coinId = "bitcoin";
+const DetailsView = () => {
+  // Fetch the selected cryptocurrency ID from the global store.
   const coinId = useGlobalStore((state) => state.detailsId);
+
+  // State to manage the selected time period for data display.
   const [days, setDays] = useState<DaysType>(365);
+
+  //useMarketChart ,useCoinDetails is a custom hook
+
   const {
     data: chartData,
     isLoading: isChartDataLoading,
@@ -35,19 +41,29 @@ const DetailsView = ({}: Props) => {
   const high24h = details?.market_data.high_24h.usd;
   const low24h = details?.market_data.low_24h.usd;
 
+  // Show a toast notification if there are errors in fetching data.
+
   useEffect(() => {
     if (isDetailsError || isChartDataError)
       toast("Sorry! Failed to load resources!");
   }, [isDetailsError, isChartDataError]);
 
+  // Show a loading indicator while data is being fetched.
   if (isDetailsLoading || isChartDataLoading) return <Loading />;
   return (
     <>
       {/* filters */}
       <div className="flex gap-5 justify-end">
-        <ButtonGroup variant="bordered" color="primary" className="my-auto">
+        {/* <ButtonGroup color="primary" variant="bordered">
+          <Button>one</Button>
+          <Button>two</Button>
+        </ButtonGroup> */}
+        <ButtonGroup color="primary" variant="bordered">
           {daysFilters.map((filter) => (
-            <Button key={filter} onClick={() => setDays(filter)}>
+            <Button
+              key={filter}
+              onClick={() => setDays(filter)}
+            >
               {filter}d
             </Button>
           ))}

@@ -8,6 +8,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     "./node_modules/@nextui-org/theme/dist/components/spinner.js",
+    "./node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js",
   ],
   theme: {
     extend: {

@@ -1,8 +1,8 @@
-import React from "react";
-import ApexCharts, { ApexOptions } from "apexcharts";
+//MarketChart --> shows the biggest chart that appears on top of the screen
+import { ApexOptions } from "apexcharts";
 import ReactApexChart from "react-apexcharts";
 import { COLORS } from "../constants.ts";
-import { color } from "framer-motion";
+
 import moment from "moment";
 import { customChartTooltip } from "../utils/helpers";
 type Props = {

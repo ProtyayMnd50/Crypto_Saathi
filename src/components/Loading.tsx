@@ -1,9 +1,8 @@
+//loading page to display if its still loading
+
 import { Spinner } from "@nextui-org/spinner";
-import React from "react";
 
-type Props = {};
-
-function Loading({}: Props) {
+function Loading() {
   return (
     <div className="h-96 flex justify-center w-full">
       <Spinner color="primary" className="scale-150 my-auto" />

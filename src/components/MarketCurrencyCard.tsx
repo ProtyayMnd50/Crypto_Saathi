@@ -52,10 +52,9 @@ const MarketCurrencyCard = ({
           </div>
         </div>
         <Button
-          // onClick={() => {}}
           onClick={showDetails}
           variant="bordered"
-          className="mt-auto"
+          className="mt-auto text-indigo-300"
           startContent={<IoPulse />}
         >
           Details
