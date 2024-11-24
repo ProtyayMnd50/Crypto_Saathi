@@ -1,50 +1,43 @@
-# React + TypeScript + Vite
+# CryptoSaathi
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+CryptoSaathi is a real-time cryptocurrency tracker that provides live updates on popular cryptocurrencies. It is built using modern web technologies like ReactJS, NextUI, Zustand, ReactApexCharts, and the Coingecko API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Real-time Price Tracking**: Stay updated with real-time data for popular cryptocurrencies.
+- **Dynamic Charts**: Visualize trends and market changes with responsive charts powered by ReactApexCharts.
+- **Simplified State Management**: Zustand is used to manage the application's state efficiently and with minimal boilerplate.
+- **Modern UI**: NextUI provides a sleek and user-friendly interface for a seamless user experience.
+- **Powered by Coingecko API**: Fetch accurate and real-time crypto data from the Coingecko API.
 
-## Expanding the ESLint configuration
+## Built With
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **ReactJS**: For building the user interface.
+- **NextUI**: For responsive and modern UI components.
+- **Zustand**: For simplified state management.
+- **ReactApexCharts**: For rendering interactive charts.
+- **Coingecko API**: For retrieving cryptocurrency data.
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+To view the project locally, follow these steps:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+* Install pnpm if not installed:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+    * Installation using **Node**
+   ```bash 
+    npm install -g pnpm
+    ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+    - **For other methods of installation**:
+     [PNPM docs](https://pnpm.io/installation "docs of PNPM")
+
+
+* Install dependencies(form the node modules folder):
+   ```bash
+   pnpm install
+
+* Start vite development server :
+     ```bash
+   pnpm run dev
+   ```
