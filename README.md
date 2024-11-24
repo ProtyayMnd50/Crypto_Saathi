@@ -16,6 +16,7 @@ CryptoSaathi is a real-time cryptocurrency tracker that provides live updates on
 - **NextUI**: For responsive and modern UI components.
 - **Zustand**: For simplified state management.
 - **ReactApexCharts**: For rendering interactive charts.
+- **Tanstack Query**: For efficient and declarative server-state management, including caching and updates.
 - **Coingecko API**: For retrieving cryptocurrency data.
 
 ## Getting Started
